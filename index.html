@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akram & Heba ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Cairo',sans-serif;
+    background:linear-gradient(135deg,#4b0000,#8b0000);
+    color:#fff;
+    text-align:center;
+    overflow-x:hidden;
+}
+.page{display:none; min-height:100vh; padding:40px 20px;}
+.active{display:block;}
+
+h1{font-family:'Great Vibes',cursive; font-size:64px; margin-bottom:10px; color:#ffb3c6;}
+h2{font-size:24px; margin-bottom:25px;}
+
+input{
+    padding:15px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    width:260px;
+    text-align:center;
+    outline:none;
+}
+
+button{
+    margin-top:25px;
+    padding:15px 35px;
+    font-size:18px;
+    border:none;
+    border-radius:40px;
+    background:#ffb3c6;
+    color:#4b0000;
+    cursor:pointer;
+    font-weight:bold;
+}
+button:hover{opacity:.85;}
+
+.text-box{max-width:900px; margin:auto; font-size:22px; line-height:2;}
+.fade{opacity:0; transform:translateY(30px); animation:fadeUp 1.5s forwards;}
+@keyframes fadeUp{to{opacity:1; transform:translateY(0);}}
+img,video{max-width:90%; border-radius:20px; margin:15px 0;}
+.promise{text-align:right; font-size:22px; max-width:700px; margin:auto; line-height:2;}
+.heart{position:fixed; bottom:-20px; font-size:22px; animation:float 6s linear infinite;}
+@keyframes float{to{transform:translateY(-110vh); opacity:0;}}
+
+#loveCounter{display:flex; justify-content:center; flex-wrap:wrap; gap:15px; margin-bottom:40px;}
+.counter-box{
+    background:#ff4d6d;
+    border-radius:20px;
+    padding:20px 25px;
+    min-width:80px;
+    font-size:20px;
+    font-weight:bold;
+    color:white;
+    box-shadow:0 4px 8px rgba(0,0,0,0.3);
+}
+.counter-label{font-size:14px; color:#ffe6eb; margin-top:5px;}
+</style>
+</head>
+
+<body>
+
+<!-- الصفحة الأولى: الباسوورد -->
+<div class="page active" id="page1">
+    <h1>Akram & Heba</h1>
+    <h2>🫂❤️ اكتبي الباسوورد يا قمر</h2>
+    <input type="password" id="pass" placeholder="password">
+    <br>
+    <button onclick="checkPass()">😚 افتح يا صغنن</button>
+</div>
+
+<!-- الصفحة الثانية: عداد الحب + نص مكتوب -->
+<div class="page" id="page2">
+    <!-- الأغنية الخلفية -->
+    <audio id="bgMusic" src="https://drive.google.com/uc?export=download&id=11TuXnD8yWfnVgVl9HAZT0iyziMQBmcCM" loop></audio>
+
+    <h2 style="margin-bottom:20px;">❤️ إحنا مع بعض من 24/5/2020</h2>
+
+    <div id="loveCounter"></div>
+
+    <div class="text-box" id="loveText"></div>
+
+    <button onclick="goPage(3)" style="margin-top:40px;">دوس هنا يا جميل 😚</button>
+</div>
+
+<!-- الصفحة الثالثة: ذكريات + صور + أغنية ثانية -->
+<div class="page" id="page3">
+    <h2 class="fade">أجمل ذكرياتنا ❤️</h2>
+
+    <video controls class="fade" style="animation-delay:.5s" src="https://drive.google.com/uc?export=download&id=19aRFXUeS3nwvayNgjZ9kEA-OCkpwWUfO"></video>
+
+    <h3>🎵 الأغنية اللي بعشقها</h3>
+    <audio id="song" controls src="https://drive.google.com/uc?export=download&id=1jyhYDluGveRqJDjAF8ToyxEslySyDKo9"></audio>
+
+    <div>
+        <div class="fade" style="animation-delay:1s">
+            <img src="https://i.postimg.cc/tCtnQ5b9/IMG20260115125107.avif">
+            <p><b>أنتي أجمل صدفة حصلتلي في حياتي كلها ❤️</b></p>
+        </div>
+        <div class="fade" style="animation-delay:1.8s">
+            <img src="https://i.postimg.cc/jjChS9qD/IMG20260101154733.avif">
+            <p><b>وجودك في حياتي هو الأمان الحقيقي 🫂</b></p>
+        </div>
+        <div class="fade" style="animation-delay:2.6s">
+            <img src="https://i.postimg.cc/fb3xN95P/IMG20251211135519.avif">
+            <p><b>عمري كله ليكي… ومن غيرك مليش عمر 💞</b></p>
+        </div>
+    </div>
+
+    <h3>موافق تكمل معايا بقيت العمر يا جميل؟ 🫂😚</h3>
+    <button onclick="goPage(4)">نعم ❤️</button>
+    <button onclick="goPage(5)">لا 😭</button>
+</div>
+
+<!-- صفحة نعم -->
+<div class="page" id="page4">
+    <h2>وأنا بوعدك إني 🥹🫂</h2>
+    <div class="promise">
+      _   أعيش ليكي انتي وبس وتبقي اختياري الأول والأخير ❤️<br>
+      _   أفضل سندك طول العمر لحد ما نشيب سوا 🫂<br>
+      _    تحلمي بس وأنا أحقق يا نُن عيني 🥹💞
+    </div>
+    <h2>بحبكككك 😚❤️</h2>
+    <button onclick="goPage(1)">Exit</button>
+</div>
+
+<!-- صفحة لا -->
+<div class="page" id="page5">
+    <h1>والله أموت نفسي 😭😭</h1>
+    <h2>فكر تاني 🥺</h2>
+    <button onclick="goPage(3)">رجوع 😚</button>
+</div>
+
+<script>
+let startDate = new Date("2020-05-24T00:00:00"); // تصحيح التاريخ
+const text = `بصي بقي...
+انا مش عارف ابدا منين بس مافيش كلام يوصف اللي جوايا❤️
+عدي بينا سنين ولسه الجاي أحلى 🫂
+من يوم ما دخلتي حياتي وأنا اتولدت من جديد
+مليتي دنيتي وخليتي للحياة طعم
+يا حتة مني 💞
+كل سنة وانتي معايا وجمبي
+Happy Valentine's Day يا عيوني 🥹
+بحبككككك 😚🫂`;
+
+function checkPass(){
+    if(document.getElementById("pass").value === "love213200"){
+        goPage(2);
+        const bg = document.getElementById("bgMusic");
+        bg.play();
+        startCounter();
+        setTimeout(typeText,3000);
+        hearts();
+    }else{
+        alert("الباسورد غلط يا قمر 😅");
+    }
+}
+
+function goPage(n){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById('page'+n).classList.add('active');
+}
+
+function typeText(){
+    let i=0;
+    const box=document.getElementById("loveText");
+    box.innerHTML="";
+    const interval=setInterval(()=>{
+        box.innerHTML+=text.charAt(i);
+        i++;
+        if(i>=text.length) clearInterval(interval);
+    },40);
+}
+
+function startCounter(){
+    setInterval(()=>{
+        const now = new Date();
+        const diff = now - startDate;
+
+        const secondsTotal = Math.floor(diff / 1000);
+        const minutesTotal = Math.floor(secondsTotal / 60);
+        const hoursTotal = Math.floor(minutesTotal / 60);
+        const daysTotal = Math.floor(hoursTotal / 24);
+        const years = Math.floor(daysTotal / 365);
+        const days = daysTotal % 365;
+        const hours = hoursTotal % 24;
+        const minutes = minutesTotal % 60;
+        const seconds = secondsTotal % 60;
+
+        const counterDiv = document.getElementById("loveCounter");
+        counterDiv.innerHTML = `
+        <div class="counter-box">${years}<div class="counter-label">سنة</div></div>
+        <div class="counter-box">${days}<div class="counter-label">يوم</div></div>
+        <div class="counter-box">${hours}<div class="counter-label">ساعة</div></div>
+        <div class="counter-box">${minutes}<div class="counter-label">دقيقة</div></div>
+        <div class="counter-box">${seconds}<div class="counter-label">ثانية</div></div>
+        `;
+    },1000);
+}
+
+function hearts(){
+    setInterval(()=>{
+        const h=document.createElement("div");
+        h.className="heart";
+        h.innerHTML="❤️";
+        h.style.left=Math.random()*100+"vw";
+        document.body.appendChild(h);
+        setTimeout(()=>h.remove(),6000);
+    },800);
+}
+
+// التحكم في الأغنية التانية (توقف الخلفية مؤقت)
+const song = document.getElementById("song");
+song.onplay = () => document.getElementById("bgMusic").pause();
+song.onpause = () => document.getElementById("bgMusic").play();
+</script>
+
+</body>
+</html>
